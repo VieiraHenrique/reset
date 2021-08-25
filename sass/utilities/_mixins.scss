@@ -1,0 +1,129 @@
+/* MEDIA QUERIES */
+
+@mixin ipad() {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin ipadPro() {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin laptop13() {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+@mixin laptop() {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin pc() {
+  @media screen and (min-width: 1920px) {
+    @content;
+  }
+}
+
+/* UTILITIES */
+
+@mixin pseudo($display: block, $position: absolute) {
+  content: "";
+  display: $display;
+  position: $position;
+}
+
+@mixin flex($direction: row, $justify: center, $align: center, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin grid($colums, $columns-gap: 0, $row-gap: 0) {
+  display: grid;
+  grid-template-columns: $colums;
+  column-gap: $columns-gap;
+  row-gap: $row-gap;
+}
+
+$laptop: 1440px;
+$ipadPro: 1024px;
+$ipad: 768px;
+
+@mixin container($max-width: 1440px) {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(20px, 1fr) [container-start] repeat(
+      12,
+      [col-start] minmax(22px, $max-width / 12) [col-end]
+    )
+    [container-end]
+    minmax(20px, 1fr) [full-end];
+  > * {
+    grid-column: container-start / container-end;
+  }
+}
+
+@mixin shadow($a: -2px, $b: 2px, $c: 10px, $d: 0.05) {
+  box-shadow: $a $b $c rgba($color: #000000, $alpha: $d);
+}
+
+@mixin transition($time: 0.4s, $interpolation: ease) {
+  transition: $time $interpolation;
+}
+
+@mixin imgWrapper($position: center center) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: $position;
+}
+
+@mixin fullSize {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin btn($width, $height, $radius, $bg, $color) {
+  display: block;
+  width: $width;
+  height: $height;
+  line-height: $height;
+  text-align: center;
+  border-radius: $radius;
+  background: $bg;
+  color: $color;
+  cursor: pointer;
+  @include transition();
+}
+
+@mixin overlayBG($url, $opacity, $position: center center) {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, $opacity),
+      rgba(0, 0, 0, $opacity)
+    ),
+    url($url);
+  background-position: $position;
+}
+
+@mixin bgPref {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@mixin widthFit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+@mixin separator($mt: 50px, $mb: 50px, $pt: 50px, $pb: 50px) {
+  margin-top: $mt;
+  margin-bottom: $mb;
+  padding-top: $pt;
+  padding-bottom: $pb;
+}
