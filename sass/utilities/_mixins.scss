@@ -121,7 +121,7 @@ $ipad: 768px;
   background-repeat: no-repeat;
 }
 
-@mixin widthFit {
+@mixin fit-content {
   width: -moz-fit-content;
   width: fit-content;
 }

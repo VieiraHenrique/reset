@@ -1,0 +1,66 @@
+.test-flex {
+  @include container($laptop);
+  background: #ccc;
+  height: 80px;
+  .wrapper {
+    background: #eaeaea;
+    @include flex(row, space-between, center);
+    @include fullSize;
+  }
+
+  ul {
+    @include flex(row, center, center, 20px);
+  }
+}
+
+.test-grid {
+  @include container($laptop);
+  background: rgb(251, 231, 206);
+  @include fullSize;
+
+  .left-bg {
+    @include fullSize;
+    background: rgb(156, 162, 199);
+    @include place(full-start / full-end, 1);
+    border-radius: 0 0 100px 0;
+  }
+
+  .left-section {
+    @include place(container-start / container-end, 1);
+    @include separator(0, 0, 50px, 50px);
+    @include flex(row, center, center);
+  }
+
+  .right-section {
+    @include separator(0, 0, 50px, 50px);
+    @include fullSize;
+    @include place(container-start / container-end, 2);
+  }
+
+  /* FROM IPAD PRO */
+  @include ipadPro {
+    .left-bg {
+      @include place(full-start/col-end 8, 1);
+    }
+
+    .left-section {
+      @include place(container-start/col-end 7, 1);
+    }
+
+    .right-section {
+      @include place(col-start 10 / container-end, 1);
+    }
+  }
+}
+
+.text {
+  h1 {
+    font-size: 47px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  .btn {
+    @include btn(200px, 60px, 100px, rgb(67, 94, 170), #fff);
+  }
+}
