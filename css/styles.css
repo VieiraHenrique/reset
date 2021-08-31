@@ -17,10 +17,11 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
+  min-height: 150vh;
 }
 
 body::-webkit-scrollbar {
-  width: 5px;
+  width: 25px;
   /* width of the entire scrollbar */
 }
 
@@ -39,7 +40,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
 }
 
 ul {
@@ -174,5 +175,21 @@ textarea {
   color: #fff;
   cursor: pointer;
   transition: 0.4s ease;
+}
+
+.test {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "main aside aside" "main aside aside";
+}
+
+.test .main {
+  grid-area: main;
+}
+
+.test .aside {
+  grid-area: aside;
+  background: red;
 }
 /*# sourceMappingURL=styles.css.map */

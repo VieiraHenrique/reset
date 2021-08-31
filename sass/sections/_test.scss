@@ -64,3 +64,18 @@
     @include btn(200px, 60px, 100px, rgb(67, 94, 170), #fff);
   }
 }
+
+.test {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "main aside aside" "main aside aside";
+
+  .main {
+    grid-area: main;
+  }
+  .aside {
+    grid-area: aside;
+    background: red;
+  }
+}
