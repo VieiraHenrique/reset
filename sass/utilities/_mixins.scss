@@ -65,6 +65,7 @@ $ipad: 768px;
     minmax(20px, 1fr) [full-end];
   > * {
     grid-column: container-start / container-end;
+    grid-row: 1;
   }
 }
 
