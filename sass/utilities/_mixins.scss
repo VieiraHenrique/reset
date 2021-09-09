@@ -54,7 +54,7 @@ $laptop: 1440px;
 $ipadPro: 1024px;
 $ipad: 768px;
 
-@mixin container($max-width: 1440px) {
+@mixin container($max-width: $laptop) {
   display: grid;
   grid-template-columns:
     [full-start] minmax(20px, 1fr) [container-start] repeat(
