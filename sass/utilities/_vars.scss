@@ -1,3 +1,5 @@
+/* COLORS */
+
 $white: #fff;
 $black: #232323;
 $text: rgb(231, 231, 231);
@@ -5,3 +7,13 @@ $blue: rgb(53, 105, 173);
 $blue-light: rgb(76, 135, 212);
 $blue-dark: rgb(25, 61, 109);
 $orange: rgb(255, 180, 60);
+
+/* HEADER-NAVIGATION VARIABLES */
+$header-height: 80px;
+$header-bg: $black;
+$hamburger-bg: $white;
+$hamburger-color: $black;
+$mobile-menu-bg: $blue;
+$nav-links-mobile: $white;
+$nav-links-desktop: $white;
+$logo-width: 120px;

@@ -1,0 +1,90 @@
+/* HAMBURGER BOILERPLATE */
+
+@mixin hamburger(){
+    display: block;
+    position: relative;
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: $hamburger-bg;
+    cursor: pointer;
+  
+    span, span::after, span::before {
+    display: block;
+    width: 26px;
+    height: 3px;
+    border-radius: 10px;
+    background: $hamburger-color;
+    position: relative;
+    @include transition;
+    }
+  
+    span::before, span::after {
+      @include pseudo();
+    }
+   
+    span::before {
+      top: -7px;
+    }
+  
+    span::after {
+      bottom: -7px;
+    }
+  }
+
+/* MENU BOILERPLATE */
+
+  @mixin menu() {
+      #toggle {
+          display: none;
+      }
+      .hamburger {
+          @include hamburger;
+          z-index: 99999;
+      }
+
+      .navigation {
+          width: 100vw;
+          height: 100vh;
+          position: fixed;
+          top: 0;
+          right: -100vw;
+          background: $mobile-menu-bg;
+          @include flex(column, center, center, 30px);
+          @include transition;
+
+          a {
+              color: $nav-links-mobile;
+          }
+      }
+
+      #toggle:checked ~ .navigation {
+        right: 0;
+      }
+
+      #toggle:checked ~ .hamburger span {
+        transform: rotate(45deg);
+      }
+      #toggle:checked ~ .hamburger span::before {
+        transform: rotate(90deg);
+        top: 0;
+      }
+      #toggle:checked ~ .hamburger span::after {
+        display: none;
+      }
+
+      @include ipadPro{
+
+        .hamburger {
+          display: none;
+        }
+
+        .navigation {
+          all: unset;
+          list-style: none;
+          @include flex(row, center, center, 20px);
+        }
+      }
+  }

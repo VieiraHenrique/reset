@@ -16,11 +16,10 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
-  min-height: 150vh;
 }
 
 body::-webkit-scrollbar {
-  width: 25px; /* width of the entire scrollbar */
+  width: 10px; /* width of the entire scrollbar */
 }
 body::-webkit-scrollbar-track {
   background: #232323; /* color of the tracking area */
