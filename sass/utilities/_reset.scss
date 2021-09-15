@@ -54,3 +54,9 @@ textarea {
   border: none;
   outline: none;
 }
+
+.container {
+  max-width: $laptop13;
+  margin: 0 auto;
+  padding: 0 30px;
+}
