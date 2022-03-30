@@ -1,6 +1,5 @@
 /* MEDIA QUERIES */
 
-
 $ipad: 768px;
 $ipadPro: 1024px;
 $laptop13: 1280px;
@@ -9,134 +8,105 @@ $pc: 1920px;
 $bigPc: 2560px;
 
 @mixin ipad() {
-  @media screen and (min-width: $ipad) {
-    @content;
-  }
+    @media screen and (min-width: $ipad) {
+        @content;
+    }
 }
 @mixin ipadPro() {
-  @media screen and (min-width: $ipadPro) {
-    @content;
-  }
+    @media screen and (min-width: $ipadPro) {
+        @content;
+    }
 }
 @mixin laptop13() {
-  @media screen and (min-width: $laptop13) {
-    @content;
-  }
+    @media screen and (min-width: $laptop13) {
+        @content;
+    }
 }
 @mixin laptop() {
-  @media screen and (min-width: $laptop) {
-    @content;
-  }
+    @media screen and (min-width: $laptop) {
+        @content;
+    }
 }
 
 @mixin pc() {
-  @media screen and (min-width: $pc) {
-    @content;
-  }
+    @media screen and (min-width: $pc) {
+        @content;
+    }
 }
 
 @mixin bigPc() {
-  @media screen and (min-width: $bigPc) {
-    @content;
-  }
+    @media screen and (min-width: $bigPc) {
+        @content;
+    }
 }
 
 /* UTILITIES */
 
 @mixin pseudo($display: block, $position: absolute) {
-  content: "";
-  display: $display;
-  position: $position;
+    content: "";
+    display: $display;
+    position: $position;
 }
-
-@mixin flex($direction: row, $justify: center, $align: center, $gap: 0) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $align;
-  gap: $gap;
-}
-
-@mixin grid($colums, $columns-gap: 0, $row-gap: 0) {
-  display: grid;
-  grid-template-columns: $colums;
-  column-gap: $columns-gap;
-  row-gap: $row-gap;
-}
-
 
 @mixin container($max-width: $laptop) {
-  display: grid;
-  grid-template-columns:
-    [full-start] minmax(20px, 1fr) [container-start] repeat(
-      12,
-      [col-start] minmax(22px, $max-width / 12) [col-end]
-    )
-    [container-end]
-    minmax(20px, 1fr) [full-end];
-  > * {
-    grid-column: container-start / container-end;
-    grid-row: 1;
-  }
-}
-
-@mixin place($col: container-start / container-end, $row: 1) {
-  grid-column: $col;
-  grid-row: $row;
+    display: grid;
+    grid-template-columns:
+        [full-start] minmax(30px, 1fr) [container-start] repeat(12, [col-start] minmax(22px, $max-width / 12) [col-end])
+        [container-end]
+        minmax(20px, 1fr) [full-end];
+    > * {
+        grid-column: container-start / container-end;
+        grid-row: 1;
+    }
 }
 
 @mixin transition($time: 0.4s, $interpolation: ease) {
-  transition: $time $interpolation;
-}
-
-@mixin imgWrapper($position: center center) {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: $position;
-}
-
-@mixin fullSize {
-  width: 100%;
-  height: 100%;
+    transition: $time $interpolation;
 }
 
 @mixin btn($width, $height, $radius, $bg, $color) {
-  display: block;
-  width: $width;
-  height: $height;
-  line-height: $height;
-  text-align: center;
-  border-radius: $radius;
-  background: $bg;
-  color: $color;
-  cursor: pointer;
-  @include transition();
+    display: block;
+    width: $width;
+    height: $height;
+    line-height: $height;
+    text-align: center;
+    border-radius: $radius;
+    background: $bg;
+    color: $color;
+    cursor: pointer;
+    @include transition();
 }
 
-@mixin overlayBG($url, $opacity, $position: center center) {
-  background-image: linear-gradient(
-      rgba(0, 0, 0, $opacity),
-      rgba(0, 0, 0, $opacity)
-    ),
-    url($url);
-  background-position: $position;
+@mixin fit-content-w {
+    width: -moz-fit-content;
+    width: fit-content;
 }
 
-@mixin bgPref {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+@mixin fit-content-h {
+    height: -moz-fit-content;
+    height: fit-content;
 }
 
-@mixin fit-content {
-  width: -moz-fit-content;
-  width: fit-content;
-}
+// Typo
 
-@mixin separator($mt: 50px, $mb: 50px, $pt: 50px, $pb: 50px) {
-  margin-top: $mt;
-  margin-bottom: $mb;
-  padding-top: $pt;
-  padding-bottom: $pb;
+@mixin responsive-text($unit) {
+    font-size: $unit;
+    line-height: 1.4;
+
+    @include ipad {
+        font-size: $unit * 1.2;
+        line-height: 1.5;
+    }
+
+    @include laptop13 {
+        font-size: $unit * 1.4;
+    }
+
+    @include laptop {
+        font-size: $unit * 1.8;
+    }
+
+    @include pc {
+        font-size: $unit * 2.2;
+    }
 }

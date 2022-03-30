@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: $arial;
+  font-family: $font-primary;
   overflow-x: hidden;
 }
 
@@ -54,6 +54,10 @@ textarea {
 }
 :-ms-input-placeholder {
   opacity: 1;
+}
+
+span {
+  display: block;
 }
 
 .container {

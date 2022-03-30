@@ -1,51 +1,19 @@
-/* TEXT */
-
 h1 {
-  font-size: 70px;
-  line-height: 1.3;
-
-  @include laptop13 {
-    font-size: 90px;
-    line-height: 1.4;
-  }
-
-  @include laptop {
-    font-size: 120px;
-    line-height: 1.5;
-  }
+    @include responsive-text(60px);
 }
 
 h2 {
-  font-size: 25px;
-  line-height: 1.3;
-
-  @include laptop13 {
-    font-size: 30px;
-    line-height: 1.4;
-  }
-
-  @include laptop13 {
-    font-size: 35px;
-    line-height: 1.5;
-  }
+    @include responsive-text(45px);
 }
 
-p {
-  margin: 12px 0;
-  font-size: 15px;
-  line-height: 1.3;
-
-  @include laptop13 {
-    font-size: 16px;
-    line-height: 1.4;
-  }
-
-  @include laptop {
-    font-size: 17px;
-    line-height: 1.5;
-  }
+h3 {
+    @include responsive-text(35px);
 }
 
-a {
-  text-decoration: none;
+p, li {
+  @include responsive-text(17px)
+}
+
+.lead {
+  @include responsive-text(20px)
 }
