@@ -1,19 +1,22 @@
 h1 {
-    @include responsive-text(60px);
+    @include h1;
 }
 
 h2 {
-    @include responsive-text(45px);
+    @include h2;
 }
 
 h3 {
-    @include responsive-text(35px);
+    @include h3;
 }
 
-p, li {
-  @include responsive-text(17px)
+p,
+li,
+a {
+    @include p;
 }
 
 .lead {
-  @include responsive-text(20px)
+    @include typo(22px);
+    line-height: 1;
 }

@@ -36,6 +36,10 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 input,
 textarea {
   padding: 1rem;
@@ -58,12 +62,6 @@ textarea {
 
 span {
   display: block;
-}
-
-.container {
-  max-width: $laptop;
-  margin: 0 auto;
-  padding: 0 30px;
 }
 
 .hidden {

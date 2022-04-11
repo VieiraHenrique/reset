@@ -1,0 +1,39 @@
+/* UTILITIES */
+
+@mixin pseudo($display: block, $position: absolute) {
+    content: "";
+    display: $display;
+    position: $position;
+}
+
+@mixin transition($time: 0.4s, $interpolation: ease) {
+    transition: $time $interpolation;
+}
+
+@mixin fit-content-w {
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+@mixin fit-content-h {
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}

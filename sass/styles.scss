@@ -1,28 +1,13 @@
 @import "./utilities/vars";
-@import "./utilities/mixins";
+
+@import "./utilities/mixins/mixins-breakpoints";
+@import "./utilities/mixins/mixins-container";
+@import "./utilities/mixins/mixins-utilities";
+@import "./utilities/mixins/mixins-typo";
+
 @import "./utilities/reset";
 @import "./utilities/typo";
-@import "./utilities/utilities";
 
-
-.section {
-    @include container($laptop13);
-
-    * {
-        min-height: 500px;
-    }
-}
-
-.one {
-    position: relative;
-    background: red;
-    grid-column: 2/7;
-    max-height: 200px;
-    z-index: 1;
-    width: fit-content;
-}
-
-.two {
-    background: green;
-    grid-column: 5/-1;
+body {
+    @include container;
 }

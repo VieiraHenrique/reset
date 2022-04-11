@@ -1,0 +1,57 @@
+// Typo
+
+@mixin typo-title($unit) {
+    font-size: $unit;
+    line-height: 1.4;
+    text-align: center;
+
+    @include ipad {
+        text-align: left;
+        font-size: $unit * 1.2;
+        line-height: 1.5;
+    }
+
+    @include laptop13 {
+        font-size: $unit * 1.4;
+    }
+
+    @include laptop {
+        font-size: $unit * 1.6;
+    }
+}
+
+@mixin typo($unit) {
+    font-size: $unit;
+    line-height: 1.4;
+    text-align: center;
+
+    @include ipad {
+        text-align: left;
+        font-size: $unit * 1.1;
+        line-height: 1.5;
+    }
+
+    @include laptop13 {
+        font-size: $unit * 1.2;
+    }
+
+    @include laptop {
+        font-size: $unit * 1.3;
+    }
+}
+
+@mixin h1 {
+    @include typo-title(60px);
+}
+
+@mixin h2 {
+    @include typo-title(45px);
+}
+
+@mixin h3 {
+    @include typo-title(35px);
+}
+
+@mixin p {
+    @include typo(16px);
+}
