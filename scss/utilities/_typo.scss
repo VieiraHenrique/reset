@@ -16,6 +16,10 @@ a {
     @include p;
 }
 
+p {
+    margin-bottom: 20px;
+}
+
 .lead {
     @include typo(22px);
     line-height: 1;
