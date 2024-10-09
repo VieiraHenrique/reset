@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.15;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $black;
+}
+
+body::-webkit-scrollbar {
+  width: 0.75rem; /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: #dbdbdb; /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(136, 136, 136); /* color of the scroll thumb */
+  border-radius: 6.25rem; /* roundness of the scroll thumb */
+  /* border: .1875rem solid orange; */ /* creates padding around scroll thumb */
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+textarea {
+  border: none;
+  outline: none;
+}
+
+::-moz-placeholder {
+  opacity: 1;
+}
+::-webkit-input-placeholder {
+  opacity: 1;
+}
+::-moz-placeholder {
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  opacity: 1;
+}

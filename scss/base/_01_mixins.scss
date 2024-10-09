@@ -1,0 +1,83 @@
+/* BREAKPOINTS */
+
+@mixin ipad() {
+  @media screen and (min-width: $ipad) {
+    @content;
+  }
+}
+@mixin ipadPro() {
+  @media screen and (min-width: $ipadPro) {
+    @content;
+  }
+}
+@mixin laptop13() {
+  @media screen and (min-width: $laptop13) {
+    @content;
+  }
+}
+@mixin laptop() {
+  @media screen and (min-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin pc() {
+  @media screen and (min-width: $pc) {
+    @content;
+  }
+}
+
+@mixin bigPc() {
+  @media screen and (min-width: $bigPc) {
+    @content;
+  }
+}
+
+// CONTAINER
+
+@mixin grid($max-width: $container-max-width) {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(5vw, 1fr) [container-start] repeat(
+      12,
+      [col-start] minmax(0.6875rem, $max-width / 12) [col-end]
+    )
+    [container-end]
+    minmax(5vw, 1fr) [full-end];
+
+  & > * {
+    grid-row: 1;
+  }
+}
+
+/* UTILITIES */
+
+@mixin pseudo($display: block, $position: absolute) {
+  content: "";
+  display: $display;
+  position: $position;
+}
+
+@mixin transition($time: 0.4s, $interpolation: ease) {
+  transition: $time $interpolation;
+}
+
+@mixin gap-vertical($spacement) {
+  margin-bottom: $spacement;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin gap-horizontal($spacement) {
+  margin-right: $spacement;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@mixin background-reset {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}

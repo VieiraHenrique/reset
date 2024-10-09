@@ -1,0 +1,158 @@
+$spacement: (
+  "0": 0,
+  "1": 0.625rem,
+  "2": 1.25rem,
+  "3": 1.875rem,
+  "4": 2.5rem,
+  "5": 3.125rem,
+  "6": 3.75rem,
+  "7": 4.375rem,
+  "8": 5rem,
+  "9": 5.625rem,
+  "10": 6.25rem,
+  "11": 6.875rem,
+  "12": 7.5rem,
+  "13": 8.125rem,
+  "14": 8.75rem,
+  "15": 9.375rem,
+  "16": 10rem,
+  "17": 10.625rem,
+  "18": 11.25rem,
+  "19": 11.875rem,
+  "20": 12.5rem,
+);
+
+@each $key, $val in $spacement {
+  .mt-#{$key} {
+    margin-top: $val;
+  }
+  .mb-#{$key} {
+    margin-bottom: $val;
+  }
+  .ml-#{$key} {
+    margin-left: $val;
+  }
+  .mr-#{$key} {
+    margin-right: $val;
+  }
+  .my-#{$key} {
+    margin-top: $val;
+    margin-bottom: $val;
+  }
+  .mx-#{$key} {
+    margin-left: $val;
+    margin-right: $val;
+  }
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@each $key, $val in $spacement {
+  .pt-#{$key} {
+    padding-top: $val;
+  }
+  .pb-#{$key} {
+    padding-bottom: $val;
+  }
+  .pl-#{$key} {
+    padding-left: $val;
+  }
+  .pr-#{$key} {
+    padding-right: $val;
+  }
+  .py-#{$key} {
+    padding-top: $val;
+    padding-bottom: $val;
+  }
+  .px-#{$key} {
+    padding-left: $val;
+    padding-right: $val;
+  }
+}
+
+// CONTAINER AND COLS
+
+.grid {
+  @include grid();
+}
+
+.container {
+  @extend .col-2-14;
+}
+
+$cols: (
+  "start": 1,
+  "2": 2,
+  "3": 3,
+  "4": 4,
+  "5": 5,
+  "6": 6,
+  "7": 7,
+  "8": 8,
+  "9": 9,
+  "10": 10,
+  "11": 11,
+  "12": 12,
+  "13": 13,
+  "14": 14,
+  "end": -1,
+);
+
+@each $start, $val-start in $cols {
+  @each $end, $val-end in $cols {
+    .col-#{$start}-#{$end} {
+      grid-column-start: $val-start;
+      grid-column-end: $val-end;
+    }
+  }
+}
+
+$breakpoints: (
+  "ipad": $ipad,
+  "ipadPro": $ipadPro,
+  "laptop13": $laptop13,
+  "laptop": $laptop,
+  "pc": $pc,
+  "bigPc": $bigPc,
+);
+
+@each $breakpoint, $val in $breakpoints {
+  @each $start, $val-start in $cols {
+    @each $end, $val-end in $cols {
+      .#{$breakpoint}-col-#{$start}-#{$end} {
+        @media screen and (min-width: $val) {
+          grid-column-start: $val-start + 1;
+          grid-column-end: $val-end + 1;
+        }
+      }
+    }
+  }
+}
+
+$rows: (
+  "1": 1,
+  "2": 2,
+  "3": 3,
+  "4": 4,
+);
+
+@each $row, $row-val in $rows {
+  .row-#{$row} {
+    grid-row: $row-val;
+  }
+}
+
+@each $breakpoint, $val in $breakpoints {
+  @each $row, $row-val in $rows {
+    .#{$breakpoint}-row-#{$row} {
+      grid-row: $row-val;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
