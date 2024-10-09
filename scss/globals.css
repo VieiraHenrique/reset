@@ -1,35 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* FONTS */
+/* COLORS */
+/* BREAKPOINTS */
+/* UTILITIES */
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  line-height: 1;
+  line-height: 1.15;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  font-family: $font-primary;
   overflow-x: hidden;
 }
 
-body::-webkit-scrollbar {
-  width: 17px; /* width of the entire scrollbar */
+body {
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
 }
+
+body::-webkit-scrollbar {
+  width: 0.75rem; /* width of the entire scrollbar */
+}
+
 body::-webkit-scrollbar-track {
   background: #dbdbdb; /* color of the tracking area */
 }
+
 body::-webkit-scrollbar-thumb {
   background-color: rgb(136, 136, 136); /* color of the scroll thumb */
-  border-radius: 100px; /* roundness of the scroll thumb */
-  /* border: 3px solid orange; */ /* creates padding around scroll thumb */
+  border-radius: 6.25rem; /* roundness of the scroll thumb */
+  /* border: .1875rem solid orange; */ /* creates padding around scroll thumb */
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
 }
 
 ul {
@@ -38,12 +52,10 @@ ul {
 
 a {
   text-decoration: none;
-  color: $black;
 }
 
 input,
 textarea {
-  padding: 1rem;
   border: none;
   outline: none;
 }
@@ -51,20 +63,15 @@ textarea {
 ::-moz-placeholder {
   opacity: 1;
 }
+
 ::-webkit-input-placeholder {
   opacity: 1;
 }
+
 ::-moz-placeholder {
   opacity: 1;
 }
+
 :-ms-input-placeholder {
   opacity: 1;
-}
-
-span {
-  display: block;
-}
-
-.hidden {
-  display: none !important;
 }
